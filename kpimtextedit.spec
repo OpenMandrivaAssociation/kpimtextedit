@@ -16,9 +16,8 @@ Summary: Text editing library for KDE PIM
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: ninja
 BuildRequires: cmake(ECM)
+BuildRequires: cmake(Grantlee5)
 BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiMime)
 BuildRequires: cmake(KF5Completion)
@@ -39,7 +38,7 @@ BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
 
 %description
-Text editing library for KDE PIM
+Text editing library for KDE PIM.
 
 %package -n %{libname}
 Summary: KDE PIM library for text editing
@@ -47,7 +46,7 @@ Group: System/Libraries
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-KDE PIM library for text editing
+KDE PIM library for text editing.
 
 %package -n %{devname}
 Summary: Development files for %{name}

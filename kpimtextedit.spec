@@ -18,24 +18,23 @@ License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Grantlee5)
-BuildRequires: cmake(KF5Akonadi)
-BuildRequires: cmake(KF5AkonadiMime)
-BuildRequires: cmake(KF5Completion)
-BuildRequires: cmake(KF5Config)
+BuildRequires: cmake(KF5Emoticons)
+BuildRequires: cmake(KF5Sonnet)
+BuildRequires: cmake(KF5TextWidgets)
+BuildRequires: cmake(KF5WidgetsAddons)
+BuildRequires: cmake(KF5Codecs)
+BuildRequires: cmake(KF5IconThemes)
+BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5CoreAddons)
-BuildRequires: cmake(KF5I18n)
-BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5KIO)
-BuildRequires: cmake(KF5Mime)
-BuildRequires: cmake(KF5Wallet)
 BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
-BuildRequires: cmake(Qt5Gui)
-BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
+BuildRequires: pkgconfig(Qt5TextToSpeech)
+
 
 %description
 Text editing library for KDE PIM.

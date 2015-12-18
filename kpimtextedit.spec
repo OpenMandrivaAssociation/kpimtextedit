@@ -33,8 +33,7 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
-BuildRequires: pkgconfig(Qt5TextToSpeech)
-
+#BuildRequires: pkgconfig(Qt5TextToSpeech)
 
 %description
 Text editing library for KDE PIM.

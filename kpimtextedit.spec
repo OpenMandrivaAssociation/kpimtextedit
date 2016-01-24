@@ -3,14 +3,14 @@
 %define devname %mklibname KF5PimTextEdit -d
 
 Name: kpimtextedit
-Version:	15.12.1
+Version: 15.12.1
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	2
+Release: 2
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: Text editing library for KDE PIM
 URL: http://kde.org/
@@ -33,7 +33,8 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
-BuildRequires: pkgconfig(Qt5TextToSpeech)
+# (tpg) kpimtextedit does not build with qtspeech enabled
+#BuildRequires: pkgconfig(Qt5TextToSpeech)
 
 %description
 Text editing library for KDE PIM.
@@ -56,7 +57,7 @@ Development files (Headers etc.) for %{name}.
 
 %prep
 %setup -q
-%cmake_kde5
+%cmake_kde5 -DKPIMTEXTEDIT_NO_TEXTTOSPEECH=TRUE
 
 %build
 %ninja -C build

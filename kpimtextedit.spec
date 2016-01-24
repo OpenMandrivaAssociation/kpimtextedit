@@ -10,7 +10,7 @@ Version:	15.12.1
 %else
 %define ftpdir stable
 %endif
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: Text editing library for KDE PIM
 URL: http://kde.org/
@@ -33,7 +33,7 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
-#BuildRequires: pkgconfig(Qt5TextToSpeech)
+BuildRequires: pkgconfig(Qt5TextToSpeech)
 
 %description
 Text editing library for KDE PIM.
@@ -56,7 +56,7 @@ Development files (Headers etc.) for %{name}.
 
 %prep
 %setup -q
-%cmake_kde5 -DKPIMTEXTEDIT_NO_TEXTTOSPEECH=TRUE
+%cmake_kde5
 
 %build
 %ninja -C build

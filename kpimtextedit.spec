@@ -3,7 +3,7 @@
 %define devname %mklibname KF5PimTextEdit -d
 
 Name: kpimtextedit
-Version: 15.12.3
+Version: 16.04.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -55,6 +55,14 @@ Requires: %{libname} = %{EVRD}
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
 
+%package designer-devel
+Summary: Qt Designer integration for %{name}
+Group: Development/KDE and Qt
+Requires: %{devname} = %{EVRD}
+
+%description -n %{devname}
+Development files (Headers etc.) for %{name}.
+
 %prep
 %setup -q
 %cmake_kde5 -DKPIMTEXTEDIT_NO_TEXTTOSPEECH=TRUE
@@ -69,7 +77,9 @@ Development files (Headers etc.) for %{name}.
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
-%{_libdir}/*.so.4*
+
+%files designer-devel
+%{_libdir}/qt5/plugins/designer/kpimtexteditwidgets.so
 
 %files -n %{devname}
 %{_includedir}/*

@@ -33,8 +33,12 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
-# (tpg) kpimtextedit does not build with qtspeech enabled
-#BuildRequires: pkgconfig(Qt5TextToSpeech)
+BuildRequires: cmake(Qt5Designer)
+BuildRequires: cmake(KF5DesignerPlugin)
+BuildRequires: cmake(Qt5UiPlugin)
+BuildRequires: cmake(Qt5Xml)
+BuildRequires: cmake(Qt5Gui)
+BuildRequires: cmake(Qt5TextToSpeech)
 
 %description
 Text editing library for KDE PIM.
@@ -65,7 +69,7 @@ Development files (Headers etc.) for %{name}.
 
 %prep
 %setup -q
-%cmake_kde5 -DKPIMTEXTEDIT_NO_TEXTTOSPEECH=TRUE
+%cmake_kde5
 
 %build
 %ninja -C build

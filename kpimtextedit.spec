@@ -38,7 +38,9 @@ BuildRequires: cmake(KF5DesignerPlugin)
 BuildRequires: cmake(Qt5UiPlugin)
 BuildRequires: cmake(Qt5Xml)
 BuildRequires: cmake(Qt5Gui)
+%if %mdvver > 3000000
 BuildRequires: cmake(Qt5TextToSpeech)
+%endif
 
 %description
 Text editing library for KDE PIM.

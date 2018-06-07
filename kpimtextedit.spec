@@ -3,7 +3,7 @@
 %define devname %mklibname KF5PimTextEdit -d
 
 Name: kpimtextedit
-Version:  17.12.2
+Version:  18.04.2
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -67,8 +67,8 @@ Summary: Qt Designer integration for %{name}
 Group: Development/KDE and Qt
 Requires: %{devname} = %{EVRD}
 
-%description -n %{devname}
-Development files (Headers etc.) for %{name}.
+%description designer-devel
+Development files (Headers etc.) for %{name} in Qt Designer
 
 %prep
 %setup -q

@@ -42,6 +42,9 @@ BuildRequires: cmake(Qt5Gui)
 %if %mdvver > 3000000
 BuildRequires: cmake(Qt5TextToSpeech)
 %endif
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt5-assistant
 
 %description
 Text editing library for KDE PIM.
